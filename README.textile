@@ -1,0 +1,493 @@
+h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Devise)! Rails and Devise
+
+Rails 4.1 example application that integrates Rails and Devise.
+
+"Devise":http://github.com/plataformatec/devise is a gem that Rails developers use for authentication and user management.
+
+This example application shows how to add additional attributes to the Devise user model. And it integrates your choice of front-end frameworks (either Bootstrap or Foundation), providing view files for login and signup pages (also "edit account" and “forgot password” pages) that are more attractive than the default Devise pages.
+
+Use this example application as a starter app for your own web applications.
+
+You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool, choosing either a Bootstrap or Foundation front-end framework, as well as many other options, such as Haml or Slim.
+
+h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:http://railsapps.github.io/
+
+h4. What is the RailsApps Project?
+
+The "RailsApps project":http://railsapps.github.io/ provides example applications that developers use as starter apps. Hundreds of developers use the apps, report problems as they arise, and propose solutions. Rails changes frequently; each application is known to work and serves as your personal "reference implementation." Each application is accompanied by a tutorial so there is no mystery code. Support for the project comes from subscribers. Please accept our invitation to "join the RailsApps project":http://railsapps.github.io/.
+
+h4. If You Are New to Rails
+
+If you're new to Rails, see "What is Ruby on Rails?":http://railsapps.github.io/what-is-ruby-rails.html, the book "Learn Ruby on Rails":http://learn-rails.com/learn-ruby-on-rails.html, and recommendations for a "Rails tutorial":https://tutorials.railsapps.org/rails-tutorial.
+
+h2. What Is Implemented -- and What Is Not
+
+The example application can be used as the basis for a website that provides a login page and user management. With knowledge of Rails, the website can be adapted and customized to your needs. Features include:
+
+* Home page
+* Navigation bar
+* Sign up (create account)
+* Login
+* "Forgot password?" feature
+* "Remember me" (stay logged in) feature
+* Edit account (edit user profile)
+* List of users
+
+The list of users is visible to anyone. Use authentication to restrict it to the user who was created first, or implement authorization to restrict it to an administrator. I recommend "Pundit":https://github.com/elabs/pundit if you wish to add authorization.
+
+h4. Database
+
+The application requires a database. The example application uses SQLite with Rails ActiveRecord. You can easily substitute PostgreSQL, MySQL, or other databases.
+
+h4. Front-end Framework
+
+The example application (here in the GitHub repository) includes simple CSS for a navigation bar and flash messages. The "rails_layout":https://github.com/RailsApps/rails_layout gem is included so you can add the Bootstrap or Foundation front-end frameworks.
+
+h2. Similar Examples and Tutorials
+
+This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.io/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.io/rails-examples-tutorials.html. Related example applications may be useful:
+
+* "Learn Rails":https://github.com/RailsApps/learn-rails shows how to add additional pages
+* "Rails and Bootstrap":http://railsapps.github.io/rails-bootstrap/ shows to integrate Bootstrap
+* "Rails and Foundation":https://github.com/RailsApps/rails-foundation shows to integrate Foundation
+
+h2. Accounts You Will Need
+
+Devise provides a "Forgot Password?" feature that resets a password and sends instructions to the user. You'll need an email service provider to send email from the application. You can use "Gmail":https://accounts.google.com/SignUp?service=mail during development. You can get a free "Gmail":https://accounts.google.com/SignUp?service=mail account if you don't already have one. For production, Gmail is not robust. Use transactional email services, such as "Mandrill":http://mandrill.com/, to send email in production. See the article "Send Email with Rails":http://railsapps.github.io/rails-send-email.html for more information.
+
+We provide instructions to deploy the application to "Heroku":https://www.heroku.com/ which provides Rails application hosting. It costs nothing to set up a Heroku account and deploy as many applications as you want. To deploy an app to Heroku, you must have a Heroku account. Visit Heroku "to set up an account":https://id.heroku.com/signup/devcenter.
+
+h2. Dependencies
+
+Before generating your application, you will need:
+
+* The Ruby language - version 2.1.1
+* The Rails gem - version 4.1
+
+See the article "Installing Rails":http://railsapps.github.io/installing-rails.html for instructions about setting up Rails and your development environment.
+
+h2. Getting the Application
+
+You have several options for getting the code. You can _fork_, _clone_, or _generate_.
+
+h3. Fork
+
+If you'd like to add features (or bug fixes) to improve the example application, you can fork the GitHub repo and "make pull requests":http://help.github.com/send-pull-requests/. Your code contributions are welcome!
+
+h3. Clone
+
+If you want to copy and customize the app with changes that are only useful for your own project, you can clone the GitHub repo. You'll need to search-and-replace the project name throughout the application. You probably should generate the app instead (see below). To clone:
+
+<pre>
+$ git clone git://github.com/RailsApps/rails-devise.git
+</pre>
+
+You'll need "git":http://git-scm.com/ on your machine. See "Rails and Git":http://railsapps.github.io/rails-git.html.
+
+h3. Generate
+
+If you want to use the project as a starter application, use the "Rails Composer":http://railsapps.github.io/rails-composer/ tool to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application gives you additional options.
+
+To build the example application, Rails 4.1 must be installed in your development environment. Run the command:
+
+<pre>
+$ rails new rails-devise -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+</pre>
+
+The @$@ character indicates a shell prompt; don't include it when you run the command.
+
+This creates a new Rails app named @rails-devise@ on your computer. You can use a different name if you wish.
+
+You'll see a prompt:
+
+<pre>
+question  Install an example application for Rails?
+      1)  Build a RailsApps starter application
+      2)  Build a contributed application
+      3)  I want to build my own application
+</pre>
+
+Enter "1" to select *Build a RailsApps starter application*. You'll see a prompt:
+
+<pre>
+question  Starter apps for Rails 4.1. More to come.
+      1)  rails-devise
+</pre>
+
+Choose *rails-devise*. The Rails Composer tool may give you other options (other applications may have been added since these notes were written).
+
+The application generator template will ask you for additional preferences:
+
+<pre>
+ question  Web server for development?
+       1)  WEBrick (default)
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Web server for production?
+       1)  Same as development
+       2)  Thin
+       3)  Unicorn
+       4)  Puma
+ question  Database used in development?
+       1)  SQLite
+       2)  PostgreSQL
+       3)  MySQL
+       4)  MongoDB
+ question  Template engine?
+       1)  ERB
+       2)  Haml
+       3)  Slim
+ question  Continuous testing?
+       1)  None
+       2)  Guard
+ question  Front-end framework?
+       1)  None
+       2)  Zurb Foundation 5.0
+       3)  Zurb Foundation 4.0
+       4)  Twitter Bootstrap 3.0
+       5)  Twitter Bootstrap 2.3
+       6)  Simple CSS
+    setup  The Devise 'forgot password' feature requires email.
+ question  Add support for sending email?
+       1)  None
+       2)  Gmail
+       3)  SMTP
+       4)  SendGrid
+       5)  Mandrill
+ question  Devise modules?
+       1)  Devise with default modules
+       2)  Devise with Confirmable module
+       3)  Devise with Confirmable and Invitable modules
+   extras  Set a robots.txt file to ban spiders? (y/n)
+   extras  Create a GitHub repository? (y/n)
+   extras  Use or create a project-specific rvm gemset? (y/n)
+</pre>
+
+h4. Web Servers
+
+We recommend Thin in development for speed and less noise in the log files.
+
+If you plan to deploy to Heroku, select Thin as your production webserver. Unicorn is recommended by Heroku but configuration is more complex.
+
+h4. Database
+
+Use SQLite for development on Mac or Linux, unless you already have PostgreSQL installed locally. Use PostgreSQL if you plan to deploy to Heroku. You can easily change the database later if you select SQLite to start.
+
+h4. Template Engine
+
+The example application uses the default "ERB" Rails template engine. Optionally, you can use another template engine, such as Haml or Slim. See instructions for "Haml and Rails":http://railsapps.github.io/rails-haml.html.
+
+h4. Front-end Framework
+
+The example in the GitHub repository was built without a front-end framework. Use Zurb Foundation 5.0 or Bootstrap 3.0 if you like. Choosing either Foundation or Bootstrap will automatically install Devise views with attractive styling.
+
+h4. Email
+
+Choose Gmail for development if you already have a Gmail account. Choose SendGrid or Mandrill for production if your site will be heavily used.
+
+h4. Devise Modules
+
+The example in the GitHub repository uses Devise with default modules.
+
+h4. Other Choices
+
+If you are a beginner, you won't need "continuous testing." If you like to use "Guard":https://github.com/guard/guard, you can select it.
+
+Set a robots.txt file to ban spiders if you want to keep your new site out of Google search results.
+
+If you choose to create a GitHub repository, the generator will prompt you for a GitHub username and password.
+
+It is a good idea to use "RVM":https://rvm.io/, the Ruby Version Manager, and create a project-specific rvm gemset (not available on Windows). See "Installing Rails":http://railsapps.github.io/installing-rails.html.
+
+h4. Troubleshooting
+
+If you get an error "OpenSSL certificate verify failed" or "Gem::RemoteFetcher::FetchError: SSL_connect" see the article "OpenSSL errors and Rails":http://railsapps.github.io/openssl-certificate-verify-failed.html.
+
+If you get an error like this:
+
+<pre>
+Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
+    composer  Running 'after bundler' callbacks.
+The template [...] could not be loaded.
+Error: You have already activated ..., but your Gemfile requires ....
+Using bundle exec may solve this.
+</pre>
+
+It's due to conflicting gem versions. See the article "Rails Error: “You have already activated (…)”":http://railsapps.github.io/rails-error-you-have-already-activated.html.
+
+h3. Edit the README
+
+If you're storing the app in a GitHub repository, please edit the README files to add a description of the app and your contact info. If you don't change the README, people will think I am the author of your version of the application.
+
+h2. Getting Started
+
+See the article "Installing Rails":http://railsapps.github.io/installing-rails.html to make sure your development environment is prepared properly.
+
+h3. Use RVM
+
+I recommend using "rvm":https://rvm.io/, the Ruby Version Manager, to create a project-specific gemset for the application. If you generate the application with the Rails Composer tool, you can create a project-specific gemset.
+
+h3. Gems
+
+Here are the gems used by the application:
+
+* "Devise":http://github.com/plataformatec/devise - authentication and user management
+
+These gems make development easier:
+
+* "better_errors":https://github.com/charliesome/better_errors - helps when things go wrong
+* "quiet_assets":https://github.com/evrone/quiet_assets - suppresses distracting messages in the log
+* "rails_layout":https://github.com/RailsApps/rails_layout - generates files for an application layout
+
+Your choice of front-end framework:
+
+* "bootstrap-sass":https://github.com/thomas-mcdonald/bootstrap-sass - Bootstrap for CSS and JavaScript
+* "foundation-rails":https://github.com/zurb/foundation-rails - Zurb Foundation for CSS and JavaScript
+
+h3. Install the Required Gems
+
+If you used the "Rails Composer":http://railsapps.github.io/rails-composer/ tool to generate the example app, the application template script has already run the @bundle install@ command.
+
+If not, you should run the @bundle install@ command to install the required gems on your computer:
+
+<pre>
+$ bundle install
+</pre>
+
+You can check which gems are installed on your computer with:
+
+<pre>
+$ gem list
+</pre>
+
+Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
+
+h3. Front-end Framework
+
+If you generate the application using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool, you have the option to install either Bootstrap or Foundation. The folder *app/views/devise/* will contain attractive view files that override the views provided in the Devise gem.
+
+If you clone the application from the repository, and you wish to add replace the simple CSS with Bootstrap or Foundation, first add a gem to the Gemfile:
+
+h4. Zurb Foundation 5.0
+
+<pre>
+gem 'foundation-rails'
+</pre>
+
+h4. Bootstrap 3.0
+
+<pre>
+gem 'bootstrap-sass'
+</pre>
+
+h4. Use Bundler
+
+Use Bundler to install the gem:
+
+<pre>
+$ bundle install
+</pre>
+
+h4. Zurb Foundation 5.0 Layout
+
+To create layout files for use with Zurb Foundation 5.0:
+
+<pre>
+$ rails generate layout:install foundation5
+</pre>
+
+h4. Bootstrap 3.0 Layout
+
+To create layout files for use with Bootstrap 3.0:
+
+<pre>
+$ rails generate layout:install bootstrap3
+</pre>
+
+h4. The "layout:devise" Command
+
+Devise provides a utility command @rails generate devise:views@. The Devise command creates view files for signup, login, and related features. However, the views generated by Devise lack CSS styling.
+
+Use the RailsLayout gem to generate Devise views with styling for Bootstrap or Foundation.
+
+* @$ rails generate layout:devise foundation5@
+* @$ rails generate layout:devise bootstrap3@
+
+The command will create these files:
+
+* app/views/devise/sessions/new.html.erb
+* app/views/devise/passwords/new.html.erb
+* app/views/devise/registrations/edit.html.erb
+* app/views/devise/registrations/new.html.erb
+
+Additionally, the command will update a file to append Sass mixins to accommodate Bootstrap or Foundation:
+
+* app/assets/stylesheets/framework_and_overrides.css.scss
+
+The Sass mixins allow any view to be used with either Bootstrap or Foundation (so we don't have to maintain separate views for each front-end framework).
+
+h3. Configuration File
+
+To keep some data private, and consolidate configuration settings in a single location, we store credentials in the *config/secrets.yml* file. Include the *config/secrets.yml* file in the *.gitignore* file to prevent the file from being saved in the git repository. See the article "Rails Environment Variables":http://railsapps.github.io/rails-environment-variables.html for more information.
+
+Add your credentials to the file *config/secrets.yml*:
+
+<pre>
+development:
+  admin_name: First User
+  admin_email: user@example.com
+  admin_password: changeme
+  gmail_username: Your_Username
+  gmail_password: Your_Password
+  secret_key_base: (not shown)
+</pre>
+
+All configuration values in the *config/secrets.yml* file are available anywhere in the application as variables. For example, @Rails.application.secrets.gmail_username@ will return the string "Your_Username". If you wish, you can obtain each value from an environment variable in the Unix shell. For example, @gmail_username: <%= ENV["GMAIL_USERNAME"] %>@.
+
+For the Gmail username and password, enter the credentials you use to log in to Gmail when you check your inbox. See the article "Send Email with Rails":http://railsapps.github.io/rails-send-email.html if you are using Google two factor authentication.
+
+The values for @admin_email@ and @admin_password@ are used when the database is seeded. You will be able to log in to the application with these credentials. Note that it's not necessary to personalize the *config/secrets.yml* file before you deploy your app. You can deploy the app with an example user and then use the application's "Edit Account" feature to change email address and password after you log in. Use this feature to log in as an administrator and change the email and password to your own.
+
+h3. Database Seed File
+
+The *db/seeds.rb* file initializes the database with default values.
+
+<pre>
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+admin = CreateAdminService.new.call
+puts 'CREATED ADMIN USER: ' << admin.email
+</pre>
+
+@CreateAdminService@ is a service object that obtains @admin_email@ and @admin_password@ values from the *config/secrets.yml* file. You can examine the file *app/services/create_admin_service.rb* to see how a new user is created.
+
+h3. Set the Database
+
+If you've used the Rails Composer tool to generate the application, the database is already set up with @rake db:migrate@ and @rake db:seed@.
+
+If you've cloned the repo, prepare the database and add the default user to the database by running the commands:
+
+<pre>
+$ rake db:migrate
+$ rake db:seed
+</pre>
+
+Use @rake db:reset@ if you want to empty and reseed the database.
+
+If you’re not using "rvm":https://rvm.io/, the Ruby Version Manager, you should preface each rake command with @bundle exec@. You don’t need to use @bundle exec@ if you are using rvm version 1.11.0 or newer.
+
+h3. Change your Application's Secret Token
+
+If you've used the Rails Composer tool to generate the application, the application's secret token will be unique, just as with any Rails application generated with the @rails new@ command.
+
+However, if you've cloned the application directly from GitHub, it is crucial that you change the application's secret token before deploying your application in production mode. Otherwise, people could change their session information, and potentially access your site without permission. Your secret token should be at least 30 characters long and completely random.
+
+Get a unique secret token:
+
+<pre>
+rake secret
+</pre>
+
+Edit the *config/secrets.yml* file to change the secret token.
+
+h2. Test the App
+
+You can check that your application runs properly by entering the command:
+
+<pre>
+$ rails server
+</pre>
+
+To see your application in action, open a browser window and navigate to "http://localhost:3000/":http://localhost:3000.
+
+You should see a home page with a navigation bar.
+
+You should be able to click the navigation links for "Log in" and "Sign up."
+
+Stop the server with Control-C. If you test the app by starting the web server and then leave the server running while you install new gems, you’ll have to restart the server to see any changes. The same is true for changes to configuration files in the config folder. This can be confusing to new Rails developers because you can change files in the app folders without restarting the server. Stop the server each time after testing and you will avoid this issue.
+
+h2. Deploy to Heroku
+
+For your convenience, here is a "Tutorial for Rails on Heroku":http://railsapps.github.io/rails-heroku-tutorial.html. Heroku provides low cost, easily configured Rails application hosting.
+
+You'll need to precompile assets before you commit to git and push to Heroku:
+
+<pre>
+$ RAILS_ENV=production rake assets:precompile
+$ git add -A
+$ git commit -m "assets compiled for Heroku"
+$ git push origin master
+</pre>
+
+If you've set configuration values in the *config/secrets.yml* file, you'll need to set them as Heroku environment variables. You can set Heroku environment variables directly with @heroku config:add@. For example:
+
+<pre>
+$ heroku config:add GMAIL_USERNAME='myname@gmail.com' GMAIL_PASSWORD='secret'
+</pre>
+
+Complete Heroku deployment with:
+
+<pre>
+$ git push heroku master
+</pre>
+
+See the "Tutorial for Rails on Heroku":http://railsapps.github.io/rails-heroku-tutorial.html for details.
+
+h2. Troubleshooting
+
+Problems? Check the "issues":https://github.com/RailsApps/rails-devise/issues.
+
+h2. Issues
+
+Please create a "GitHub issue":https://github.com/RailsApps/rails-devise/issues if you identify any problems or have suggestions for improvements.
+
+h2. Where to Get Help
+
+Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
+
+You can also try "Rails Hotline":http://www.railshotline.com/, a free telephone hotline for Rails help staffed by volunteers.
+
+h2. Contributing
+
+If you make improvements to this application, please share with others.
+
+Send the author a message, create an "issue":https://github.com/RailsApps/rails-devise/issues, or fork the project and submit a pull request.
+
+If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
+
+h2. Credits
+
+Daniel Kehoe implemented the application and wrote the tutorial.
+
+Is the app useful to you? Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps
+and tweet some praise. I'd love to know you were helped out by what I've put together.
+
+h2. MIT License
+
+"MIT License":http://www.opensource.org/licenses/mit-license
+
+Copyright ©2014 Daniel Kehoe
+
+h2. Useful Links
+
+|_. Getting Started |_. Articles |_. Tutorials |
+| "Learn Rails":http://learn-rails.com/ | "Bootstrap and Rails":http://railsapps.github.io/twitter-bootstrap-rails.html | "Rails and Bootstrap":http://railsapps.github.io/rails-bootstrap/ |
+| "Ruby and Rails":http://railsapps.github.io/ruby-and-rails.html | "Analytics for Rails":http://railsapps.github.io/rails-google-analytics.html | |
+| "What is Ruby on Rails?":http://railsapps.github.io/what-is-ruby-rails.html | "Heroku and Rails":http://railsapps.github.io/rails-heroku-tutorial.html | "Devise with CanCan and Bootstrap":https://tutorials.railsapps.org/rails3-bootstrap-devise-cancan |
+| "Rails Tutorial":https://tutorials.railsapps.org/rails-tutorial | "JavaScript and Rails":http://railsapps.github.io/rails-javascript-include-external.html | "Rails Membership Site with Stripe":https://tutorials.railsapps.org/rails-stripe-membership-saas |
+| "Installing Rails":http://railsapps.github.io/installing-rails.html | "Rails Environment Variables":http://railsapps.github.io/rails-environment-variables.html | "Rails Subscription Site with Recurly":https://tutorials.railsapps.org/rails-recurly-subscription-saas |
+| "Updating Rails":http://railsapps.github.io/updating-rails.html | "Git and Rails":http://railsapps.github.io/rails-git.html | "Startup Prelaunch Signup Application":http://railsapps.github.io/tutorial-rails-prelaunch-signup.html |
+| "Rails Composer":http://railsapps.github.io/rails-composer/ | "Email and Rails":http://railsapps.github.io/rails-send-email.html | "Devise with RSpec and Cucumber":http://railsapps.github.io/tutorial-rails-devise-rspec-cucumber.html |
+| "Rails Examples":http://railsapps.github.io/ | "Haml and Rails":http://railsapps.github.io/rails-haml.html | "Devise with Mongoid":http://railsapps.github.io/tutorial-rails-mongoid-devise.html |
+| "Rails Starter Apps":http://railsapps.github.io/rails-examples-tutorials.html | "Rails Application Layout":http://railsapps.github.io/rails-default-application-layout.html | "OmniAuth with Mongoid":http://railsapps.github.io/tutorial-rails-mongoid-omniauth.html |
+| | "HTML5 Boilerplate for Rails":http://railsapps.github.io/rails-html5-boilerplate.html | "Subdomains with Devise":http://railsapps.github.io/tutorial-rails-subdomains.html |
+| | "Example Gemfiles for Rails":http://railsapps.github.io/rails-3-2-example-gemfile.html | |
+| | "Rails Application Templates":http://railsapps.github.io/rails-application-templates.html | |
+
+!https://cruel-carlota.pagodabox.com/3bea17f88e1f3dd4a44301dae5e45261(githalytics.com alpha)!
