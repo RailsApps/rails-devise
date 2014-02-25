@@ -4,7 +4,7 @@ Rails 4.1 example application that integrates Rails and Devise.
 
 "Devise":http://github.com/plataformatec/devise is a gem that Rails developers use for authentication and user management.
 
-This example application shows how to add additional attributes to the Devise user model. And it integrates your choice of front-end frameworks (either Bootstrap or Foundation), providing view files for login and signup pages (also "edit account" and “forgot password” pages) that are more attractive than the default Devise pages.
+This example application integrates your choice of front-end frameworks (either Bootstrap or Foundation), providing view files for login and signup pages (also "edit account" and “forgot password” pages) that are more attractive than the default Devise pages.
 
 Use this example application as a starter app for your own web applications.
 
