@@ -101,13 +101,13 @@ This creates a new Rails app named @rails-devise@ on your computer. You can use 
 You'll see a prompt:
 
 <pre>
-question  Install an example application for Rails?
-      1)  Build a RailsApps starter application
+question  Build a starter application?
+      1)  Build a RailsApps example application
       2)  Build a contributed application
       3)  I want to build my own application
 </pre>
 
-Enter "1" to select *Build a RailsApps starter application*. You'll see a prompt:
+Enter "1" to select *Build a RailsApps example application*. You'll see a prompt:
 
 <pre>
 question  Starter apps for Rails 4.1. More to come.
@@ -143,10 +143,10 @@ The application generator template will ask you for additional preferences:
        2)  Guard
  question  Front-end framework?
        1)  None
-       2)  Zurb Foundation 5.0
-       3)  Zurb Foundation 4.0
-       4)  Twitter Bootstrap 3.0
-       5)  Twitter Bootstrap 2.3
+       2)  Twitter Bootstrap 3.0
+       3)  Twitter Bootstrap 2.3
+       4)  Zurb Foundation 5.0
+       5)  Zurb Foundation 4.0
        6)  Simple CSS
     setup  The Devise 'forgot password' feature requires email.
  question  Add support for sending email?
