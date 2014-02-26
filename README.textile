@@ -50,6 +50,7 @@ This is one in a series of Rails example apps and tutorials from the "RailsApps 
 * "Learn Rails":https://github.com/RailsApps/learn-rails shows how to add additional pages
 * "Rails and Bootstrap":http://railsapps.github.io/rails-bootstrap/ shows to integrate Bootstrap
 * "Rails and Foundation":https://github.com/RailsApps/rails-foundation shows to integrate Foundation
+* "Rails and OmniAuth":https://github.com/RailsApps/rails-omniauth shows to use OmniAuth for authentication
 
 h2. Accounts You Will Need
 
@@ -112,6 +113,7 @@ Enter "1" to select *Build a RailsApps example application*. You'll see a prompt
 <pre>
 question  Starter apps for Rails 4.1. More to come.
       1)  rails-devise
+      2)  rails-omniauth
 </pre>
 
 Choose *rails-devise*. The Rails Composer tool may give you other options (other applications may have been added since these notes were written).
@@ -159,6 +161,9 @@ The application generator template will ask you for additional preferences:
        1)  Devise with default modules
        2)  Devise with Confirmable module
        3)  Devise with Confirmable and Invitable modules
+ question  Use a form builder gem?
+       1)  None
+       2)  SimpleForm
    extras  Set a robots.txt file to ban spiders? (y/n)
    extras  Create a GitHub repository? (y/n)
    extras  Use or create a project-specific rvm gemset? (y/n)
