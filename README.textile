@@ -31,7 +31,7 @@ The example application can be used as the basis for a website that provides a l
 * Edit account (edit user profile)
 * List of users
 
-The list of users is visible to anyone. Use authentication to restrict it to the user who was created first, or implement authorization to restrict it to an administrator. I recommend "Pundit":https://github.com/elabs/pundit if you wish to add authorization.
+The list of users is visible to anyone. Use authentication to restrict it to the user who was created first, or implement authorization to restrict it to an administrator. See the "rails-devise-pundit":https://github.com/RailsApps/rails-devise-pundit example application if you wish to add authorization.
 
 h4. Database
 
@@ -46,9 +46,10 @@ h2. Similar Examples and Tutorials
 This is one in a series of Rails example apps and tutorials from the "RailsApps Project":http://railsapps.github.io/. See a list of additional "Rails examples, tutorials, and starter apps":http://railsapps.github.io/rails-examples-tutorials.html. Related example applications may be useful:
 
 * "Learn Rails":https://github.com/RailsApps/learn-rails shows how to add additional pages
-* "Rails and Bootstrap":http://railsapps.github.io/rails-bootstrap/ shows to integrate Bootstrap
-* "Rails and Foundation":https://github.com/RailsApps/rails-foundation shows to integrate Foundation
-* "Rails and OmniAuth":https://github.com/RailsApps/rails-omniauth shows to use OmniAuth for authentication
+* "Bootstrap and Rails":http://railsapps.github.io/rails-bootstrap/ shows to integrate Bootstrap
+* "Foundation and Rails":https://github.com/RailsApps/rails-foundation shows to integrate Foundation
+* "OmniAuth and Rails":https://github.com/RailsApps/rails-omniauth shows to use OmniAuth for authentication
+* "Devise and Pundit and Rails":https://github.com/RailsApps/rails-devise-pundit shows to use Pundit for authorization
 
 h2. Accounts You Will Need
 
