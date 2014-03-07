@@ -365,8 +365,8 @@ The *db/seeds.rb* file initializes the database with default values.
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << admin.email
+user = CreateAdminService.new.call
+puts 'CREATED ADMIN USER: ' << user.email
 </pre>
 
 @CreateAdminService@ is a service object that obtains @admin_email@ and @admin_password@ values from the *config/secrets.yml* file. You can examine the file *app/services/create_admin_service.rb* to see how a new user is created.
