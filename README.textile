@@ -462,7 +462,10 @@ $ git push origin master
 If you've set configuration values in the *config/secrets.yml* file, you'll need to set them as Heroku environment variables. You can set Heroku environment variables directly with @heroku config:add@. For example:
 
 <pre>
+$ heroku config:add ADMIN_NAME='First User'
+$ heroku config:add ADMIN_EMAIL='user@example.com' ADMIN_PASSWORD='changeme'
 $ heroku config:add GMAIL_USERNAME='myname@gmail.com' GMAIL_PASSWORD='secret'
+$ heroku config:add DOMAIN_NAME='example.com'
 </pre>
 
 Complete Heroku deployment with:
