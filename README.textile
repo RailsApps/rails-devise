@@ -350,12 +350,12 @@ Add your credentials to the file *config/secrets.yml*:
 # if you're sharing your code publicly.
 
 development:
-  admin_name: <%= ENV["ADMIN_NAME"] %>
-  admin_email: <%= ENV["ADMIN_EMAIL"] %>
-  admin_password: <%= ENV["ADMIN_PASSWORD"] %>
+  admin_name: First User
+  admin_email: user@example.com
+  admin_password: changeme
   email_provider_username: <%= ENV["GMAIL_USERNAME"] %>
   email_provider_password: <%= ENV["GMAIL_PASSWORD"] %>
-  domain_name: <%= ENV["DOMAIN_NAME"] %>
+  domain_name: example.com
   secret_key_base: very_long_random_string
 
 test:
