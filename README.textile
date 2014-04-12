@@ -488,7 +488,7 @@ h2. Where to Get Help
 
 Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
 
-You can also try "Rails Hotline":http://www.railshotline.com/, a free telephone hotline for Rails help staffed by volunteers.
+Use the tag "railsapps" on Stack Overflow for extra attention.
 
 h2. Contributing
 
