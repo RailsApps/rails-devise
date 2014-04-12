@@ -110,9 +110,13 @@ question  Build a starter application?
 Enter "1" to select *Build a RailsApps example application*. You'll see a prompt:
 
 <pre>
-question  Starter apps for Rails 4.1. More to come.
-      1)  rails-devise
-      2)  rails-omniauth
+  question  Starter apps for Rails 4.1. More to come.
+        1)  learn-rails
+        2)  rails-bootstrap
+        3)  rails-foundation
+        4)  rails-omniauth
+        5)  rails-devise
+        6)  rails-devise-pundit
 </pre>
 
 Choose *rails-devise*. The Rails Composer tool may give you other options (other applications may have been added since these notes were written).
@@ -120,49 +124,53 @@ Choose *rails-devise*. The Rails Composer tool may give you other options (other
 The application generator template will ask you for additional preferences:
 
 <pre>
- question  Web server for development?
-       1)  WEBrick (default)
-       2)  Thin
-       3)  Unicorn
-       4)  Puma
- question  Web server for production?
-       1)  Same as development
-       2)  Thin
-       3)  Unicorn
-       4)  Puma
- question  Database used in development?
-       1)  SQLite
-       2)  PostgreSQL
-       3)  MySQL
-       4)  MongoDB
- question  Template engine?
-       1)  ERB
-       2)  Haml
-       3)  Slim
- question  Continuous testing?
-       1)  None
-       2)  Guard
- question  Front-end framework?
-       1)  None
-       2)  Twitter Bootstrap 3.0
-       3)  Twitter Bootstrap 2.3
-       4)  Zurb Foundation 5.0
-       5)  Zurb Foundation 4.0
-       6)  Simple CSS
-    setup  The Devise 'forgot password' feature requires email.
- question  Add support for sending email?
-       1)  None
-       2)  Gmail
-       3)  SMTP
-       4)  SendGrid
-       5)  Mandrill
- question  Devise modules?
-       1)  Devise with default modules
-       2)  Devise with Confirmable module
-       3)  Devise with Confirmable and Invitable modules
- question  Use a form builder gem?
-       1)  None
-       2)  SimpleForm
+  question  Web server for development?
+        1)  WEBrick (default)
+        2)  Thin
+        3)  Unicorn
+        4)  Puma
+        5)  Phusion Passenger (Apache/Nginx)
+        6)  Phusion Passenger (Standalone)
+  question  Web server for production?
+        1)  Same as development
+        2)  Thin
+        3)  Unicorn
+        4)  Puma
+        5)  Phusion Passenger (Apache/Nginx)
+        6)  Phusion Passenger (Standalone)
+  question  Database used in development?
+        1)  SQLite
+        2)  PostgreSQL
+        3)  MySQL
+        4)  MongoDB
+  question  Template engine?
+        1)  ERB
+        2)  Haml
+        3)  Slim
+  question  Continuous testing?
+        1)  None
+        2)  Guard
+  question  Front-end framework?
+        1)  None
+        2)  Bootstrap 3.0
+        3)  Bootstrap 2.3
+        4)  Zurb Foundation 5.0
+        5)  Zurb Foundation 4.0
+        6)  Simple CSS
+     setup  The Devise 'forgot password' feature requires email.
+  question  Add support for sending email?
+        1)  None
+        2)  Gmail
+        3)  SMTP
+        4)  SendGrid
+        5)  Mandrill
+  question  Devise modules?
+        1)  Devise with default modules
+        2)  Devise with Confirmable module
+        3)  Devise with Confirmable and Invitable modules
+  question  Use a form builder gem?
+        1)  None
+        2)  SimpleForm
    extras  Set a robots.txt file to ban spiders? (y/n)
    extras  Create a GitHub repository? (y/n)
    extras  Use or create a project-specific rvm gemset? (y/n)
@@ -202,7 +210,7 @@ Set a robots.txt file to ban spiders if you want to keep your new site out of Go
 
 If you choose to create a GitHub repository, the generator will prompt you for a GitHub username and password.
 
-It is a good idea to use "RVM":https://rvm.io/, the Ruby Version Manager, and create a project-specific rvm gemset (not available on Windows). See "Installing Rails":http://railsapps.github.io/installing-rails.html.
+It is a good idea to use "rvm":https://rvm.io/, the Ruby Version Manager, and create a project-specific rvm gemset (not available on Windows). See "Installing Rails":http://railsapps.github.io/installing-rails.html.
 
 h4. Troubleshooting
 
@@ -236,7 +244,7 @@ h3. Gems
 
 Here are the gems used by the application:
 
-* "Devise":http://github.com/plataformatec/devise - authentication and user management
+* "devise":http://github.com/plataformatec/devise - authentication and user management
 
 These gems make development easier:
 
@@ -333,25 +341,47 @@ The Sass mixins allow any view to be used with either Bootstrap or Foundation (s
 
 h3. Configuration File
 
-To keep some data private, and consolidate configuration settings in a single location, we store credentials in the *config/secrets.yml* file. Include the *config/secrets.yml* file in the *.gitignore* file to prevent the file from being saved in the git repository. See the article "Rails Environment Variables":http://railsapps.github.io/rails-environment-variables.html for more information.
+To consolidate configuration settings in a single location, we store credentials in the *config/secrets.yml* file. To keep your credentials private, use Unix environment variables to set your credentials. See the article "Rails Environment Variables":http://railsapps.github.io/rails-environment-variables.html for more information.
 
 Add your credentials to the file *config/secrets.yml*:
 
 <pre>
+# Make sure the secrets in this file are kept private
+# if you're sharing your code publicly.
+
 development:
-  admin_name: First User
-  admin_email: user@example.com
-  admin_password: changeme
-  gmail_username: Your_Username
-  gmail_password: Your_Password
-  secret_key_base: (not shown)
+  admin_name: <%= ENV["ADMIN_NAME"] %>
+  admin_email: <%= ENV["ADMIN_EMAIL"] %>
+  admin_password: <%= ENV["ADMIN_PASSWORD"] %>
+  email_provider_username: <%= ENV["GMAIL_USERNAME"] %>
+  email_provider_password: <%= ENV["GMAIL_PASSWORD"] %>
+  domain_name: <%= ENV["DOMAIN_NAME"] %>
+  secret_key_base: very_long_random_string
+
+test:
+  secret_key_base: very_long_random_string
+
+# Do not keep production secrets in the repository,
+# instead read values from the environment.
+production:
+  admin_name: <%= ENV["ADMIN_NAME"] %>
+  admin_email: <%= ENV["ADMIN_EMAIL"] %>
+  admin_password: <%= ENV["ADMIN_PASSWORD"] %>
+  email_provider_username: <%= ENV["GMAIL_USERNAME"] %>
+  email_provider_password: <%= ENV["GMAIL_PASSWORD"] %>
+  domain_name: <%= ENV["DOMAIN_NAME"] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 </pre>
 
-All configuration values in the *config/secrets.yml* file are available anywhere in the application as variables. For example, @Rails.application.secrets.gmail_username@ will return the string "Your_Username". If you wish, you can obtain each value from an environment variable in the Unix shell. For example, @gmail_username: <%= ENV["GMAIL_USERNAME"] %>@.
+All configuration values in the *config/secrets.yml* file are available anywhere in the application as variables. For example, @Rails.application.secrets.email_provider_username@ will return the string set in the Unix environment variable @GMAIL_USERNAME@.
 
 For the Gmail username and password, enter the credentials you use to log in to Gmail when you check your inbox. See the article "Send Email with Rails":http://railsapps.github.io/rails-send-email.html if you are using Google two factor authentication.
 
 The values for @admin_email@ and @admin_password@ are used when the database is seeded. You will be able to log in to the application with these credentials. Note that it's not necessary to personalize the *config/secrets.yml* file before you deploy your app. You can deploy the app with an example user and then use the application's "Edit Account" feature to change email address and password after you log in. Use this feature to log in as an administrator and change the email and password to your own.
+
+The variable @domain_name@ is used for sending email. You can use @example.com@ in development. If you already have a custom domain name you'll use when you deploy the application, you can set @domain_name@. If you deploy the application to Heroku, you'll set @domain_name@ with the unique name you've given your application on Heroku. You'll have to wait until you deploy to know the name you'll use on Heroku.
+
+If you don't want to use Unix environment variables, you can set each value directly in the *config/secrets.yml* file. The file must be in your git repository when you deploy to Heroku. However, you shouldn't save the file to a public GitHub repository where other people can see your credentials.
 
 h3. Database Seed File
 
