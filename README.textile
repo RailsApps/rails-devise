@@ -155,9 +155,9 @@ The application generator template will ask you for additional preferences:
         1)  ERB
         2)  Haml
         3)  Slim
-  question  Continuous testing?
+ question  Test framework?
         1)  None
-        2)  Guard
+        2)  RSpec with Capybara
   question  Front-end framework?
         1)  None
         2)  Bootstrap 3.0
@@ -198,6 +198,10 @@ h4. Template Engine
 
 The example application uses the default "ERB" Rails template engine. Optionally, you can use another template engine, such as Haml or Slim. See instructions for "Haml and Rails":http://railsapps.github.io/rails-haml.html.
 
+h4. Testing
+
+If you are a beginner, select "None."
+
 h4. Front-end Framework
 
 The example in the GitHub repository was built without a front-end framework. Use Zurb Foundation 5.0 or Bootstrap 3.0 if you like. Choosing either Foundation or Bootstrap will automatically install Devise views with attractive styling.
@@ -211,8 +215,6 @@ h4. Devise Modules
 The example in the GitHub repository uses Devise with default modules.
 
 h4. Other Choices
-
-If you are a beginner, you won't need "continuous testing." If you like to use "Guard":https://github.com/guard/guard, you can select it.
 
 Set a robots.txt file to ban spiders if you want to keep your new site out of Google search results.
 
