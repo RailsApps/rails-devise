@@ -10,10 +10,23 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'bootstrap-sass'
 gem 'devise'
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
+  gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
+  gem 'rails_apps_testing'
   gem 'rails_layout'
+end
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '>= 3.0.0.beta2'
+end
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
