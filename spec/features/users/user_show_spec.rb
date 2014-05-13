@@ -8,6 +8,10 @@ Warden.test_mode!
 #   So I can see my personal account data
 feature 'User profile page', :devise do
 
+  after(:each) do
+    Warden.test_reset!
+  end
+
   # Scenario: User sees own profile
   #   Given I am signed in
   #   When I visit the user profile page

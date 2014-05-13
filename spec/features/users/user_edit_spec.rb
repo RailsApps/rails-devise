@@ -8,6 +8,10 @@ Warden.test_mode!
 #   So I can change my email address
 feature 'User edit', :devise do
 
+  after(:each) do
+    Warden.test_reset!
+  end
+
   # Scenario: User changes email address
   #   Given I am signed in
   #   When I change my email address

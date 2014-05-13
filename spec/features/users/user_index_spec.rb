@@ -8,6 +8,10 @@ Warden.test_mode!
 #   So I can see who has registered
 feature 'User index page', :devise do
 
+  after(:each) do
+    Warden.test_reset!
+  end
+
   # Scenario: User listed on index page
   #   Given I am signed in
   #   When I visit the user index page
