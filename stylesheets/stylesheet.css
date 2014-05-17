@@ -1,5 +1,5 @@
 /*******************************************************************************
-Slate Theme for GitHub Pages
+Slate Theme for Github Pages
 by Jason Costello, @jsncostello
 *******************************************************************************/
 
@@ -39,9 +39,16 @@ ol, ul {
   list-style: none;
 }
 
+blockquote, q {
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+a:focus {
+  outline: none;
 }
 
 /*******************************************************************************
@@ -99,6 +106,7 @@ p {
 
 footer p {
   color: #f2f2f2;
+  font-size: 10px;
 }
 
 a {
@@ -118,11 +126,14 @@ a {
   -ms-transition: text-shadow 0.5s ease;
 }
 
-a:hover, a:focus {text-decoration: underline;}
+#main_content a:hover {
+  color: #0069ba;
+  text-shadow: #0090ff 0px 0px 2px;
+}
 
-footer a {
-  color: #F2F2F2;
-  text-decoration: underline;
+footer a:hover {
+  color: #43adff;
+  text-shadow: #0090ff 0px 0px 2px;
 }
 
 em {
@@ -139,22 +150,6 @@ img {
   max-width: 739px;
   padding: 5px;
   margin: 10px 0 10px 0;
-  border: 1px solid #ebebeb;
-
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
-}
-
-p img {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  vertical-align: middle;
-  text-align: center;
-  border: none;
 }
 
 pre, code {
@@ -163,11 +158,14 @@ pre, code {
   background-color: #fff;
 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  font-size: 14px;
+  font-size: 11px;
 
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+
+
+
 }
 
 pre {
@@ -195,17 +193,16 @@ blockquote {
   border-left: 3px solid #bbb;
 }
 
-
 ul, ol, dl {
   margin-bottom: 15px
 }
 
-ul {
+ul li {
   list-style: inside;
   padding-left: 20px;
 }
 
-ol {
+ol li {
   list-style: decimal inside;
   padding-left: 20px;
 }
@@ -313,6 +310,12 @@ Full-Width Styles
   text-shadow: #111 0px 0px 10px;
 }
 
+#header-links {
+  display: block;
+  float: left;
+  margin-top: 30px;
+}
+
 #downloads {
   position: absolute;
   width: 210px;
@@ -320,7 +323,6 @@ Full-Width Styles
   bottom: -40px;
   right: 0;
   height: 70px;
-  background: url('../images/icon_download.png') no-repeat 0% 90%;
 }
 
 .zip_download_link {
@@ -362,8 +364,47 @@ Full-Width Styles
   padding-top: 40px;
 }
 
+.imageBox {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: inline-block;
+  border: none;
+  padding: 4px;
+  text-align: center; 
+  font-size: 24px;
+  font-weight: 700;
+/*  border-radius: 30px; 
+  -moz-border-radius: 30px; 
+  -webkit-border-radius: 30px; 
+  border: 5px solid #000000;*/
+}
+
 #footer_wrap {
   background: #212121;
+}
+
+
+/* Quick links
+-------------------------------------------------- */
+.quick-links {
+  min-height: 30px;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+.quick-links:first-child {
+  min-height: 0;
+}
+.quick-links li {
+  display: inline;
+  margin: 0 2px;
+  color: #999;
+}
+.quick-links .github-btn,
+.quick-links .tweet-btn,
+.quick-links .follow-btn {
+  position: relative;
+  top: 5px;
 }
 
 
@@ -420,4 +461,12 @@ Small Device Styles
     font-size: 11px;
   }
 
+}
+
+/*******************************************************************************
+Custom
+*******************************************************************************/
+
+.choices {
+  font-size: 12px;
 }
