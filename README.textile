@@ -4,7 +4,7 @@ Rails 4.1 example application that integrates Rails and Devise.
 
 "Devise":http://github.com/plataformatec/devise is a gem that Rails developers use for authentication and user management.
 
-Use this example application as a starter app for your own web applications.
+Use this example application as a starter app for your own web applications. A complete "Devise Tutorial":http://railsapps.github.io/rails-devise/ is available.
 
 You can build this application in only a few minutes using the "Rails Composer":http://railsapps.github.io/rails-composer/ tool, choosing either a Bootstrap or Foundation front-end framework, as well as many other options, such as Haml or Slim. You get login and signup pages (also "edit account" and “forgot password” pages) that are more attractive than the default Devise pages.
 
@@ -20,7 +20,7 @@ If you're new to Rails, see "What is Ruby on Rails?":http://railsapps.github.io/
 
 h4. Devise Tutorial
 
-An in=depth "Devise Tutorial":http://railsapps.github.io/rails-devise/ is available from the RailsApps project. The tutorial describes the example application in detail, so there is no mystery code.
+An in-depth "Devise Tutorial":http://railsapps.github.io/rails-devise/ is available from the RailsApps project. The tutorial describes the example application in detail, so there is no mystery code.
 
 h2. What Is Implemented -- and What Is Not
 
