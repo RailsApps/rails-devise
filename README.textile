@@ -18,6 +18,10 @@ h4. If You Are New to Rails
 
 If you're new to Rails, see "What is Ruby on Rails?":http://railsapps.github.io/what-is-ruby-rails.html, the book "Learn Ruby on Rails":http://learn-rails.com/learn-ruby-on-rails.html, and recommendations for a "Rails tutorial":https://tutorials.railsapps.org/rails-tutorial.
 
+h4. Devise Tutorial
+
+An in=depth "Devise Tutorial":http://railsapps.github.io/rails-devise/ is available from the RailsApps project. The tutorial describes the example application in detail, so there is no mystery code.
+
 h2. What Is Implemented -- and What Is Not
 
 The example application can be used as the basis for a website that provides a login page and user management. With knowledge of Rails, the website can be adapted and customized to your needs. Features include:
@@ -435,6 +439,14 @@ You should see a home page with a navigation bar.
 You should be able to click the navigation links for "Log in" and "Sign up."
 
 Stop the server with Control-C. If you test the app by starting the web server and then leave the server running while you install new gems, you’ll have to restart the server to see any changes. The same is true for changes to configuration files in the config folder. This can be confusing to new Rails developers because you can change files in the app folders without restarting the server. Stop the server each time after testing and you will avoid this issue.
+
+h3. RSpec Test Suite
+
+The application contains a suite of RSpec feature tests. To run:
+
+<pre>
+$ rspec
+</pre>
 
 h2. Deploy to Heroku
 
