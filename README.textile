@@ -354,7 +354,7 @@ development:
 
 test:
   secret_key_base: very_long_random_string
-  domain_name: <%= ENV["DOMAIN_NAME"] %>
+  domain_name: example.com
 
 # Do not keep production secrets in the repository,
 # instead read values from the environment.
@@ -448,8 +448,6 @@ The application contains a suite of RSpec feature tests. To run:
 <pre>
 $ rspec
 </pre>
-
-To run the tests, you must set an environment variable @ENV["DOMAIN_NAME"]@, hardcode a value in the file *config/secrets.yml*, or change the @config.mailer_sender@ value in *config/initializers/devise.rb*.
 
 h2. Deploy to Heroku
 
