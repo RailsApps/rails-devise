@@ -43,7 +43,7 @@ The application requires a database. The example application uses SQLite with Ra
 
 h4. Front-end Framework
 
-The example application (here in the GitHub repository) includes simple CSS for a navigation bar and flash messages. The "rails_layout":https://github.com/RailsApps/rails_layout gem is included so you can add the Bootstrap or Foundation front-end frameworks.
+The example application (here in the GitHub repository) integrates Bootstrap for a navigation bar and flash messages. The "rails_layout":https://github.com/RailsApps/rails_layout gem is included so you can switch to the Foundation front-end framework.
 
 h2. Similar Examples and Tutorials
 
@@ -478,6 +478,18 @@ $ git push heroku master
 </pre>
 
 See the "Tutorial for Rails on Heroku":http://railsapps.github.io/rails-heroku-tutorial.html for details.
+
+h2. Adding a Name Attribute
+
+This example application shows how you can add a @name@ attribute to the User model. You'll see the @name@ attribute in the partial used for the "sign up" and "update account" forms:
+
+* _app/views/users/_user.html.erb_
+
+When you add an attribute to the User model, you must list the attribute in the permitted parameters allowed by Devise. Permitted attributes are listed in the file:
+
+* _config/initializers/devise_permitted_parameters.rb_
+
+The "Devise Tutorial":http://railsapps.github.io/rails-devise/ includes a full explanation.
 
 h2. Troubleshooting
 
