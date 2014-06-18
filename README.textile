@@ -1,8 +1,9 @@
 h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Devise)! Rails and Devise
 
-Rails 4.1 example application that integrates Rails and Devise.
+Rails 4.1 example application that provides authentication and user management.
 
-"Devise":http://github.com/plataformatec/devise is a gem that Rails developers use for authentication and user management.
+* "Devise":https://github.com/plataformatec/devise for user management and authentication
+* "Bootstrap":http://getbootstrap.com/ or "Foundation":http://foundation.zurb.com/ front-end frameworks
 
 Use this example application as a starter app for your own web applications. A complete "Devise Tutorial":http://railsapps.github.io/rails-devise/ is available.
 
@@ -12,7 +13,7 @@ h4. !http://railsapps.github.io/images/join/join-railsapps.png(Join RailsApps)!:
 
 h4. What is the RailsApps Project?
 
-The "RailsApps project":http://railsapps.github.io/ provides example applications that developers use as starter apps. Hundreds of developers use the apps, report problems as they arise, and propose solutions. Rails changes frequently; each application is known to work and serves as your personal "reference implementation." Support for the project comes from subscribers. If you like this application, please accept our invitation to "join the RailsApps project":http://railsapps.github.io/.
+The "RailsApps project":http://railsapps.github.io/ provides example applications that developers use as starter apps. Hundreds of developers use the apps, report problems as they arise, and propose solutions. Rails changes frequently; each application is known to work and serves as your personal "reference implementation." Support for the project comes from subscribers. If this application is helpful to you, please "join the RailsApps project":http://railsapps.github.io/ to support our work.
 
 h4. If You Are New to Rails
 
