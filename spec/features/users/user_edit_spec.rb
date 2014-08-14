@@ -22,7 +22,7 @@ feature 'User edit', :devise do
     fill_in 'Email', :with => 'newemail@example.com'
     fill_in 'Current password', :with => user.password
     click_button 'Update'
-    expect(page).to have_content 'You updated your account successfully.'
+    expect(page).to have_content 'Your account has been updated successfully.'
   end
 
   # Scenario: User cannot edit another user's profile
