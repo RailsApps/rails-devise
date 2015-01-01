@@ -109,8 +109,6 @@ This creates a new Rails app named @rails-devise@ on your computer. You can use 
 
 You'll see a prompt:
 
-You'll see a prompt:
-
 <pre>
 option  Build a starter application?
     1)  Build a RailsApps example application
