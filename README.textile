@@ -77,7 +77,7 @@ h2. Getting the Application
 
 h3. Local
 
-You have several options for getting the code on your own machine. You can _fork_, _clone_, or _generate_.
+You have several options for getting the code on your own machine. You can _fork_, _clone_, _generate_ or use _nitrous.io_.
 
 h4. Fork
 
@@ -92,6 +92,14 @@ $ git clone git://github.com/RailsApps/rails-devise.git
 </pre>
 
 You'll need "git":http://git-scm.com/ on your machine. See "Rails and Git":http://railsapps.github.io/rails-git.html.
+
+h4. Nitrous Quickstart
+
+If you don't want to go through the hassle of installing things on your personal machine, you can quickly create a free rails-devise development environment in the cloud on Nitrous:
+
+!{width:142px; height: 34px}https://nitrous-image-icons.s3.amazonaws.com/quickstart.png(Nitrous Quickstart)!:https://www.nitrous.io/quickstart
+
+In the IDE, start Rails Devise via `Run > Start Rails Devise` and access your site via `Preview > 3000`.
 
 h4. Generate
 

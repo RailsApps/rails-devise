@@ -1,0 +1,10 @@
+{
+  "template": "rails",
+  "ports": [3000],
+  "name": "Rails Devise",
+  "description": "Rails 4.2 starter app with Devise for authentication.",
+  "scripts": {
+    "post-create": "rm -rf ~/code/example && rbenv install 2.2.3 && rbenv global 2.2.3 && gem install bundler && cd ~/code/rails-devise && bundle install && rake db:migrate && rake db:test:prepare",
+    "Start Rails Devise": "cd ~/code/rails-devise && rails s -b 0.0.0.0"
+  }
+}
