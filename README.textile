@@ -1,6 +1,6 @@
 h1. !http://railsapps.github.io/images/rails-36x36.jpg(Rails Devise)! Rails and Devise
 
-Rails 4.2 example application that provides authentication and user management.
+Rails 5.0 example application that provides authentication and user management.
 
 * "Devise":https://github.com/plataformatec/devise for user management and authentication
 * "Bootstrap":http://getbootstrap.com/ or "Foundation":http://foundation.zurb.com/ front-end frameworks
@@ -60,7 +60,7 @@ This is one in a series of Rails example apps and tutorials from the "RailsApps 
 
 h2. Accounts You Will Need
 
-Devise provides a "Forgot Password?" feature that resets a password and sends instructions to the user. You'll need an email service provider to send email from the application. You can use "Gmail":https://accounts.google.com/SignUp?service=mail during development. You can get a free "Gmail":https://accounts.google.com/SignUp?service=mail account if you don't already have one. For production, Gmail is not robust. Use transactional email services, such as "Mandrill":http://mandrill.com/, to send email in production. See the article "Send Email with Rails":http://railsapps.github.io/rails-send-email.html for more information.
+Devise provides a "Forgot Password?" feature that resets a password and sends instructions to the user. You'll need an email service provider to send email from the application. You can use "Gmail":https://accounts.google.com/SignUp?service=mail during development. You can get a free "Gmail":https://accounts.google.com/SignUp?service=mail account if you don't already have one. For production, Gmail is not robust. Use transactional email services, such as "SendGrid":https://sendgrid.com/, to send email in production. See the article "Send Email with Rails":http://railsapps.github.io/rails-send-email.html for more information.
 
 We provide instructions to deploy the application to "Heroku":https://www.heroku.com/ which provides Rails application hosting. It costs nothing to set up a Heroku account and deploy as many applications as you want. To deploy an app to Heroku, you must have a Heroku account. Visit Heroku "to set up an account":https://id.heroku.com/signup/devcenter.
 
@@ -68,8 +68,8 @@ h2. Dependencies
 
 Before generating your application, you will need:
 
-* The Ruby language - version 2.2
-* The Rails gem - version 4.2
+* The Ruby language - version 2.3.1
+* The Rails gem - version 5.0
 
 See the article "Installing Rails":http://railsapps.github.io/installing-rails.html for instructions about setting up Rails and your development environment.
 
@@ -97,7 +97,7 @@ h4. Generate
 
 If you want to use the project as a starter application, use the "Rails Composer":http://railsapps.github.io/rails-composer/ tool to generate a new version of the example app. You'll be able to give it your own project name when you generate the app. Generating the application gives you additional options.
 
-To build the example application, Rails 4.2 must be installed in your development environment. Run the command:
+To build the example application, Rails 5.0 must be installed in your development environment. Run the command:
 
 <pre>
 $ rails new rails-devise -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
@@ -248,7 +248,6 @@ Here are the gems used by the application:
 These gems make development easier:
 
 * "better_errors":https://github.com/charliesome/better_errors - helps when things go wrong
-* "quiet_assets":https://github.com/evrone/quiet_assets - suppresses distracting messages in the log
 * "rails_layout":https://github.com/RailsApps/rails_layout - generates files for an application layout
 
 Your choice of front-end framework:
@@ -371,7 +370,7 @@ The *db/seeds.rb* file initializes the database with default values.
 
 <pre>
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# The data can then be loaded with the rails db:seed (or created alongside the db with db:setup).
 #
 # Examples:
 #
@@ -385,18 +384,16 @@ puts 'CREATED ADMIN USER: ' << user.email
 
 h3. Set the Database
 
-If you've used the Rails Composer tool to generate the application, the database is already set up with @rake db:migrate@ and @rake db:seed@.
+If you've used the Rails Composer tool to generate the application, the database is already set up with @rake db:migrate@ and @rails db:seed@.
 
 If you've cloned the repo, prepare the database and add the default user to the database by running the commands:
 
 <pre>
-$ rake db:migrate
-$ rake db:seed
+$ rails db:migrate
+$ rails db:seed
 </pre>
 
-Use @rake db:reset@ if you want to empty and reseed the database.
-
-If you’re not using "rvm":https://rvm.io/, the Ruby Version Manager, you should preface each rake command with @bundle exec@. You don’t need to use @bundle exec@ if you are using rvm version 1.11.0 or newer.
+Use @rails db:reset@ if you want to empty and reseed the database.
 
 h3. Change your Application's Secret Token
 
@@ -407,7 +404,7 @@ However, if you've cloned the application directly from GitHub, it is crucial th
 Get a unique secret token:
 
 <pre>
-rake secret
+$ rails secret
 </pre>
 
 Edit the *config/secrets.yml* file to change the secret token.
@@ -504,7 +501,7 @@ h2. MIT License
 
 "MIT License":http://www.opensource.org/licenses/mit-license
 
-Copyright ©2014-15 Daniel Kehoe
+Copyright ©2014-16 Daniel Kehoe
 
 h2. Useful Links
 
