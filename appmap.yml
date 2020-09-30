@@ -1,0 +1,9 @@
+name: rails-devise
+packages:
+- path: app/controllers
+- path: app/helpers
+- path: app/jobs
+- path: app/mailers
+- path: app/models
+- path: app/services
+- path: /Users/kgilpin/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/devise-4.7.3/lib
